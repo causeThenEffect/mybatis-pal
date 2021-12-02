@@ -20,6 +20,8 @@ import java.util.Properties;
 
 /**
  * @author cause
+ *
+ * 限制拦截的type和方法
  */
 @Intercepts(
         {
@@ -60,6 +62,10 @@ public class ConsumeTimeInterceptor implements Interceptor {
     }
   }
 
+  /**
+   * 设置插件自定义属性
+   * @param properties
+   */
   @Override
   public void setProperties(Properties properties) {
     String limitMilliSecond = properties.getProperty("limitMilliSecond");
